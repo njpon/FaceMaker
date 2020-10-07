@@ -34,6 +34,16 @@ public class FaceController implements AdapterView.OnItemSelectedListener, Radio
         this.spin = spin;
     }
 
+    /**
+     * onItemSelected is a listener for the spinner to select a hair style
+     *
+     * @Nathaniel Pon
+     *
+     * @param adapterView
+     * @param view
+     * @param i
+     * @param l
+     */
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         //selects a hair style from the spinner
@@ -43,6 +53,7 @@ public class FaceController implements AdapterView.OnItemSelectedListener, Radio
         faceView.invalidate();
     }
 
+    //we don't need to use this method
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
@@ -55,6 +66,15 @@ public class FaceController implements AdapterView.OnItemSelectedListener, Radio
      *  Resource:
      *          https://stackoverflow.com/questions/8719632/multiple-seekbars-listener/13468578
      * Solution: Followed the example in this post
+     *
+     * onProgressChanged is a listener for each of the SeekBars to change RGB values in
+     * the face class correspondingly
+     *
+     * @Nathaniel Pon
+     *
+     * @param seekBar
+     * @param i
+     * @param b
      */
     @Override
     public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
@@ -97,16 +117,26 @@ public class FaceController implements AdapterView.OnItemSelectedListener, Radio
         faceView.invalidate();
     }
 
+    //We don't need to use this value
     @Override
     public void onStartTrackingTouch(SeekBar seekBar) {
 
     }
-
+    //We don't need to use this value
     @Override
     public void onStopTrackingTouch(SeekBar seekBar) {
 
     }
 
+    /**
+     * onCheckedChanged is the listener for our RadioButtons so that that we can change the
+     * color of each of the features based on which button is pressed
+     *
+     * @Nathaniel Pon
+     *
+     * @param radioGroup
+     * @param i
+     */
     @Override
     public void onCheckedChanged(RadioGroup radioGroup, int i) {
 
@@ -135,6 +165,13 @@ public class FaceController implements AdapterView.OnItemSelectedListener, Radio
         faceView.invalidate();
     }
 
+    /**
+     * onClick is the listener for our randomize button that changes the face randomly
+     *
+     * @Nathaniel Pon
+     *
+     * @param view
+     */
     @Override
     public void onClick(View view) {
         //randomizes the face by calling the randomize() method from the face class

@@ -35,7 +35,14 @@ public class Face extends SurfaceView {
     Paint pupils = new Paint();
     Paint outerEye = new Paint();
 
-    //The constructor for the Face class
+    /**
+     * The constructor for our Face class
+     *
+     * @Nathaniel Pon
+     *
+     * @param context
+     * @param attrs
+     */
     public Face(Context context, AttributeSet attrs) {
         super(context, attrs);
         setWillNotDraw(false);
@@ -54,6 +61,8 @@ public class Face extends SurfaceView {
      * randomize()
      * assigns the color variables a random color and assigns the hairStyle to any number from 0
      * to 2
+     *
+     * @Nathaniel Pon
      */
     public void randomize() {
         hairStyle = (int)(Math.random()*3);
@@ -63,33 +72,71 @@ public class Face extends SurfaceView {
     }
 
     /**
-     * Setter methods for hairSelected, skinSelectec, eyesSelected, hairStyle, hairColor,
-     * skinColor, eyeColor
+     * Setter method for hairSelected
+     * @Nathaniel Pon
      */
     public void setHairSelected() {
         hairSelected = true;
         skinSelected = false;
         eyesSelected = false;
     }
+    /**
+     * Setter method for skinSelected
+     * @Nathaniel Pon
+     */
     public void setSkinSelected() {
         skinSelected = true;
         eyesSelected = false;
         hairSelected = false;
     }
+    /**
+     * Setter method for eyesSelected
+     * @Nathaniel Pon
+     */
     public void setEyesSelected() {
         eyesSelected = true;
         skinSelected = false;
         hairSelected = false;
     }
+    /**
+     * Setter method for hairStyle
+     * @Nathaniel Pon
+     *
+     * @param i
+     */
     public void setHairStyle(int i) {
         this.hairStyle = i;
     }
+    /**
+     * Setter method for hairColor
+     * @Nathaniel Pon
+     *
+     * @param r
+     * @param g
+     * @param b
+     */
     public void setHairColor(int r, int g, int b) {
         hairColor = Color.rgb(r,g,b);
     }
+    /**
+     * Setter method for skinColor
+     * @Nathaniel Pon
+     *
+     * @param r
+     * @param g
+     * @param b
+     */
     public void setSkinColor(int r, int g, int b) {
         skinColor = Color.rgb(r,g,b);
     }
+    /**
+     * Setter method for eyeColor
+     * @Nathaniel Pon
+     *
+     * @param r
+     * @param g
+     * @param b
+     */
     public void setEyeColor(int r, int g, int b) {
         eyeColor = Color.rgb(r,g,b);
     }
@@ -97,6 +144,8 @@ public class Face extends SurfaceView {
     /**
      * Setter methods for hairSelected, skinSelected, eyeSelected,
      * hairColor, skinColor, eyeColor, hairStyle
+     *
+     * @Nathaniel Pon
      */
     public boolean getHairSelected() {return hairSelected;}
     public boolean getSkinSelected() {return skinSelected;}
@@ -107,11 +156,23 @@ public class Face extends SurfaceView {
     public int getHairStyle() {return hairStyle;}
 
     /**
-     * Drawing methods for head, eyes, hair style, and mouth
+     * Draws the head of the face using a circle filled in with skinPaint
+     *
+     * @Nathaniel Pon
+     *
+     * @param canvas
      */
     public void drawHead(Canvas canvas) {
         canvas.drawCircle(canvas.getWidth()/2, canvas.getHeight()/2, 400, skinPaint);
     }
+
+    /**
+     * Draws two eyes using the pupils paint, outerEye paint, and eyePaint
+     *
+     * @Nathaniel Pon
+     *
+     * @param canvas
+     */
     public void drawEyes(Canvas canvas) {
         canvas.drawCircle(canvas.getWidth()/2 + 170, canvas.getHeight()/2 - 100, 74, pupils);
         canvas.drawCircle(canvas.getWidth()/2 + 170, canvas.getHeight()/2 - 100, 70, outerEye);
@@ -123,6 +184,14 @@ public class Face extends SurfaceView {
         canvas.drawCircle(canvas.getWidth()/2 - 170, canvas.getHeight()/2 - 100, 40, eyePaint);
         canvas.drawCircle(canvas.getWidth()/2 - 170, canvas.getHeight()/2 - 100, 25, pupils);
     }
+
+    /**
+     * Draws the hair based on spinner selection and uses hairPaint as its color
+     *
+     * @Nathaniel Pon
+     *
+     * @param canvas
+     */
     public void drawHair(Canvas canvas) {
         if (hairStyle == 0) {
             Rect ugly = new Rect(canvas.getWidth()/2 - 420, canvas.getHeight()/2 - 800, canvas.getWidth()/2 + 420, canvas.getHeight()/2);
@@ -141,6 +210,13 @@ public class Face extends SurfaceView {
         }
     }
 
+    /**
+     * Draws the mouth using the drawArc method and pupils paint as a basic black paint
+     *
+     * @Nathaniel Pon
+     *
+     * @param canvas
+     */
     //Suppressed because I don't think it matters if the drawMouth method requires a certain
     //OS to work. Otherwise, there would be an error
     @SuppressLint("NewApi")
@@ -150,6 +226,9 @@ public class Face extends SurfaceView {
 
     /**
      * The onDraw method that synthesizes all of the drawing methods
+     *
+     * @Nathaniel Pon
+     *
      * @param canvas
      */
     public void onDraw(Canvas canvas) {
