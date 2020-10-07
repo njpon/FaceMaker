@@ -2,8 +2,8 @@
     <string name="app_name">FaceMaker</string>
 
     <string-array name = "HairSelection">
-        <item>Ugly</item>
-        <item>Cool</item>
-        <item>Normal</item>
+        <item>Slim-Jim</item>
+        <item>Edgy</item>
+        <item>Normal Baldy</item>
     </string-array>
 </resources>

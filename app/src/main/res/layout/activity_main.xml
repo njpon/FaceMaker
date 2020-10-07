@@ -14,28 +14,35 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_marginTop="25dp"
+            android:layout_weight="10"
             android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="10"
                 android:orientation="vertical">
 
-                <!--https://www.tutorialspoint.com/how-can-i-add-items-to-a-spinner-in-android-->
-
-                <SurfaceView
-                    android:id="@+id/surfaceView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                <com.example.facemaker.Face
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="5" />
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Select A Hairstyle" />
 
                 <Spinner
                     android:id="@+id/spinner"
@@ -51,7 +58,7 @@
                     android:text="Create a Random Face" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/random"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="5"
@@ -64,26 +71,34 @@
                     android:layout_weight="1"
                     android:text=" Select A Feature To Edit" />
 
-                <RadioButton
-                    android:id="@+id/radioButton4"
+                <RadioGroup
+                    android:id="@+id/selection"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="5"
-                    android:text="Hair" />
+                    android:layout_weight="10">
 
-                <RadioButton
-                    android:id="@+id/radioButton3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="5"
-                    android:text="Eyes" />
+                    <RadioButton
+                        android:id="@+id/hair"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:text="Hair" />
 
-                <RadioButton
-                    android:id="@+id/radioButton2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="5"
-                    android:text="Skin" />
+                    <RadioButton
+                        android:id="@+id/eyes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:text="Eyes" />
+
+                    <RadioButton
+                        android:id="@+id/skin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:text="Skin" />
+                </RadioGroup>
+
             </LinearLayout>
 
         </LinearLayout>
@@ -98,37 +113,47 @@
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Red" />
+                android:text="Red"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#FF0000"
+                android:textColorLink="#FF0000" />
 
             <SeekBar
                 android:id="@+id/Red"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:max="255" />
+                android:max="255"
+                android:progress="100" />
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Green" />
+                android:text="Green"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#4CAF50" />
 
             <SeekBar
                 android:id="@+id/Green"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:max="255" />
+                android:max="255"
+                android:progress="100" />
 
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Blue" />
+                android:text="Blue"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#03A9F4" />
 
             <SeekBar
                 android:id="@+id/Blue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:max="255" />
+                android:max="255"
+                android:progress="100" />
 
         </LinearLayout>
 
